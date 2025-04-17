@@ -14,18 +14,20 @@ body {
     justify-content: center;
 }
 .glass {
-    height: 10rem;
-    width: 2.5rem;
-    /* background-color: aqua; */
+    height: 12rem;
+    width: 2.9rem;
+    background-color: rgba(28, 253, 253, 0.021);
     margin-right: 1.5rem;
     border-style: solid;
-    border-color: aquamarine;
+    border-color: rgba(127, 255, 212, 0);
     border-width: 0.2rem;
     border-top: none;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
     display: flex;
     flex-direction: column-reverse;
+    box-shadow: 5px 5px 10px -5px rgb(127, 255, 212);
+    padding: 8px;
 }
 .color {
     /* background-color: blueviolet; */
@@ -34,6 +36,7 @@ body {
     border-width: 2px;
     border-color: black;
     border-radius: 50%;
+    margin-bottom: 8px;
 
 }
 .c1{
@@ -67,4 +70,7 @@ body {
 .level {
     font-weight: bold;
     margin-top: 2rem;
+    font-size: 2em;
+    color: greenyellow;
+    
 }

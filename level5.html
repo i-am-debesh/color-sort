@@ -44,6 +44,9 @@
         
         document.body.addEventListener('click',()=>{
             bgAudio.play()
+        });
+        document.querySelectorAll('.glass').forEach((g)=>{
+            g.classList.add('focused')
         })
     </script>
     

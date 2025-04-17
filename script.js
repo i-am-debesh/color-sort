@@ -4,7 +4,11 @@ const glass3 = document.getElementById('g3');
 const glasses = document.querySelectorAll('.glass');
 const gameSpaceElement = document.getElementById('game-space');
 const levelElement = document.querySelector('.level');
+const restartBtn = document.getElementById('restart-btn');
 
+restartBtn.addEventListener('click', ()=>{
+    location.reload(); 
+});
 let focusedGlassAndColor = ''
 let winItemLimit = 3; //no. of win can be possible
 let targetGlass = '';

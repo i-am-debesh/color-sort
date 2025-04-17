@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    text-align: center;
+    background-color: black;
+    color: white;
+    
+}
+.game-space {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+}
+.glass {
+    height: 10rem;
+    width: 2.5rem;
+    /* background-color: aqua; */
+    margin-right: 1.5rem;
+    border-style: solid;
+    border-color: aquamarine;
+    border-width: 0.2rem;
+    border-top: none;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.color {
+    /* background-color: blueviolet; */
+    height: 3rem;
+    border-style:solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 50%;
+
+}
+.c1{
+    background-color: red;
+}
+.c2{
+    background-color: green;
+}
+.c3{
+    background-color: yellow;
+    
+}
+.focused{
+    /* margin-bottom: 1rem; */
+    /* box-shadow: 2px 2px 2px white; */
+    animation: fBox 1s linear infinite ;
+    
+}
+@keyframes fBox {
+    0%, 100% {
+      transform: translateY(-1rem);
+    }
+    50% {
+      transform: translateY(-2rem);
+    }
+  }
+.disable {
+    pointer-events: none;
+    opacity: 0.6;
+}
+.level {
+    font-weight: bold;
+    margin-top: 2rem;
+}

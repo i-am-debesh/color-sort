@@ -37,6 +37,15 @@
     <div class="btns">
         <button id="restart-btn" class="restart-btn">Restart</button>
     </div>
+
+    <script>
+        
+        let bgAudio = new Audio('/musics/bg.mp3');
+        
+        document.body.addEventListener('click',()=>{
+            bgAudio.play()
+        })
+    </script>
     
     <script src="script.js"></script>
     <!-- <script src="levels.js"></script> -->

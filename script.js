@@ -10,11 +10,15 @@ restartBtn.addEventListener('click', ()=>{
     location.reload(); 
 });
 let focusedGlassAndColor = ''
-let winItemLimit = 3; //no. of win can be possible
+
 let targetGlass = '';
 let isFocused = false;
 let winGlassId = [];
+let colorCount = 3;
+
 let currentLevel = extractNumber(levelElement.innerText);
+currentLevel >= 6?colorCount=4:colorCount=3;
+let winItemLimit = colorCount; //no. of win can be possible
 function extractNumber(str) {
     const match = str.match(/\d+/); // match the first sequence of digits
     return match ? parseInt(match[0]) : null;
@@ -47,39 +51,48 @@ function safeRedirect(targetUrl, fallbackUrl) {
 }
 
 function goNextLevel(currentLevel) {
-    currentLevel += 1;
+    currentLevel += 1;    
     const page = `/level${currentLevel}.html`;
     safeRedirect(page,'index.html');
     
 }
 
+function allEqual(arr) {
+    return arr.every(val => val === arr[0]);
+}
 
 function isWin () {
     
     for(let i=0; i<glasses.length; i++) {
         let currGlass = glasses[i];
         if(!winGlassId.includes(currGlass.id)) {
-            if(currGlass.childElementCount === 3) {
-                
-                if
-                (
-                    currGlass.children.item(0).id === 
-                    currGlass.children.item(1).id
-                    &&
-                    currGlass.children.item(1).id ===
-                    currGlass.children.item(2).id
-
-                ) {
+            //for Three colors
+            if(colorCount === 3 && currGlass.childElementCount === 3) {
+                let colorIds = [];
+                for(let c=0; c<colorCount; c++) {
+                    colorIds.push(currGlass.children.item(c).id);
+                }
+                if(allEqual(colorIds)) {
                     currGlass.classList.add('disable');
                     winItemLimit--;
                     winGlassId.push(currGlass.id);
-                    // if(winItemLimit === 0) {
-                    //     alert('congratulations!🎉 You Win..');
-                    // } 
                     console.log('done'+currGlass.id);
                     return winItemLimit;
+                }                
+            }
+            //for four colors::
+            else if( colorCount === 4 && currGlass.childElementCount === 4) {
+                let colorIds = [];
+                for(let c=0; c<colorCount; c++) {
+                    colorIds.push(currGlass.children.item(c).id);
                 }
-                
+                if(allEqual(colorIds)) {
+                    currGlass.classList.add('disable');
+                    winItemLimit--;
+                    winGlassId.push(currGlass.id);
+                    console.log('done'+currGlass.id);
+                    return winItemLimit;
+                }     
             }
             
         }
@@ -113,7 +126,7 @@ glasses.forEach((glass)=>{
                     
                 }
                 
-        }else if(glass.childElementCount > 0 && glass.childElementCount <3) {
+        }else if(glass.childElementCount > 0 && glass.childElementCount <colorCount) {
                 if(glass.lastElementChild.id === focusedGlassAndColor.id) {
                     glass.appendChild(focusedGlassAndColor);
                     

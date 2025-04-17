@@ -18,7 +18,8 @@ body {
     flex-wrap: wrap;
 }
 .glass {
-    height: 12rem;
+    min-height: 12rem;
+    /* max-height: fit-content; */
     width: 2.9rem;
     background-color: rgba(1, 1, 1, 0.17);
     margin-left: 1.5rem;
@@ -41,6 +42,9 @@ body {
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 }
+/* .glass-four-color{
+    
+} */
 .color {
     /* background-color: blueviolet; */
     height: 3rem;
@@ -61,6 +65,10 @@ body {
 }
 .c3{
     background-color: yellow;
+    
+}
+.c4{
+    background-color:orange;
     
 }
 .focused{

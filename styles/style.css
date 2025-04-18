@@ -11,6 +11,15 @@ body {
     color: white;
     
 }
+.exit-icon {
+    height: 2rem;
+    width: 2rem;
+    margin: 1rem;
+    margin-bottom: -0.4rem;
+    background-image: url('/images/cross.png');
+    background-size:cover;
+    background-repeat: no-repeat;   
+}
 .heading {
     display: flex;
     justify-content: center;

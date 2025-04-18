@@ -1,3 +1,10 @@
+body {
+    text-align: center;
+    background-color: rgba(124, 124, 195, 0.892);
+    color: white;
+    
+}
+
 .start-btn {
     margin-top: 10rem;
     border: none;
@@ -9,4 +16,19 @@
 }
 .start-btn:active{
     opacity: 70%;
+}
+
+.first-heading {
+    display: flex;
+    justify-content: center;
+    
+}
+.exit-icon {
+    height: 2rem;
+    width: 2rem;
+    margin: 1rem;
+    margin-bottom: -3.5rem;
+    background-image: url('/images/cross.png');
+    background-size:cover;
+    background-repeat: no-repeat;   
 }

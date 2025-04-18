@@ -5,8 +5,11 @@ const glasses = document.querySelectorAll('.glass');
 const gameSpaceElement = document.getElementById('game-space');
 const levelElement = document.querySelector('.level');
 const restartBtn = document.getElementById('restart-btn');
+const exitElement = document.querySelector('.exit-icon');
 
-
+exitElement.addEventListener('click', ()=>{
+    safeRedirect('index.html','#');
+})
 
 restartBtn.addEventListener('click', ()=>{
     location.reload(); 

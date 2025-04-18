@@ -38,6 +38,7 @@ body {
     gap: 1rem;
     width: 100%;
     max-width: 600px;
+    cursor: pointer;
 }
 
 .level {
@@ -49,6 +50,9 @@ body {
     font-weight: bold;
     color: #333;
     transition: transform 0.2s ease;
+}
+.completed{
+    background-color: green;
 }
 
 .level:hover {

@@ -4,6 +4,11 @@ const levelElements = document.querySelectorAll('.level');
 const eraseBtn = document.querySelector('.erase-btn');
 const editBtn = document.querySelector('.edit-btn');
 
+levelElements.forEach(level=>{
+    level.addEventListener('click',()=>{
+        safeRedirect(`level${extractNumber(level.innerHTML)}.html`,'index.html');
+    })
+})
 function safeRedirect(targetUrl, fallbackUrl) {
     fetch(targetUrl, { method: 'HEAD' }) // Only checks headers, faster than GET
       .then(response => {

@@ -29,6 +29,9 @@ let colorCount = 3;
 
 let currentLevel = extractNumber(levelElement.innerText);
 currentLevel >= 6?colorCount=4:colorCount=3;
+if(currentLevel >=10 ) {
+    colorCount = 5;
+}
 
 
 if(colorCount >=3 ) {
@@ -39,6 +42,10 @@ if(colorCount >=3 ) {
     }else if(colorCount === 4) {
         glasses.forEach(glass=>{
             glass.classList.add('glass-four-color');
+        })
+    }else if(colorCount === 5) {
+        glasses.forEach(glass=>{
+            glass.classList.add('glass-five-color');
         })
     }
 }
@@ -85,9 +92,7 @@ function updatePlayerLevel(level) {
     }
    
 }
-function goNextLevel(currentLevel) {
-
-    
+function goNextLevel(currentLevel) {    
     currentLevel += 1;    
     updatePlayerLevel(currentLevel);
     const page = `/level${currentLevel}.html`;
@@ -129,6 +134,27 @@ function isWin () {
                     winItemLimit--;
                     winGlassId.push(currGlass.id);
                     //console.log('done'+currGlass.id);
+                    return winItemLimit;
+                }     
+            }
+            //for five balls::
+            else if( colorCount === 5 && currGlass.childElementCount === 5) {
+                let colorIds = [];
+                for(let c=0; c<colorCount; c++) {
+                    colorIds.push(currGlass.children.item(c).id);
+                }
+                if(allEqual(colorIds)) {
+                    currGlass.classList.add('disable');
+                    winItemLimit--;
+                    winGlassId.push(currGlass.id);
+                    //console.log('done'+currGlass.id);
+                    if(winItemLimit === 1) {
+                        glasses.forEach(glass=>{
+                            if(glass.childElementCount === 0) {
+                                winItemLimit = 0;
+                            }
+                        });
+                    }
                     return winItemLimit;
                 }     
             }

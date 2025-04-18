@@ -74,6 +74,9 @@ body {
 .glass-four-color{
     height: 15rem;
 }
+.glass-five-color {
+    height: 19.2rem;
+}
 .color {
     /* background-color: blueviolet; */
     height: 3rem;
@@ -99,6 +102,9 @@ body {
 .c4{
     background-color:orange;
     
+}
+.c5{
+    background-color: blue;
 }
 .focused{
     /* margin-bottom: 1rem; */

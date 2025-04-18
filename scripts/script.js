@@ -74,9 +74,22 @@ function safeRedirect(targetUrl, fallbackUrl) {
         window.location.href = fallbackUrl;
       });
 }
+function updatePlayerLevel(level) {
+   const playerdata = JSON.parse(localStorage.getItem("player"));
 
+    if(playerdata) {
+        playerdata.currentLevel = level;
+        localStorage.setItem("player", JSON.stringify(playerdata));
+    }else {
+        alert('no player found!');
+    }
+   
+}
 function goNextLevel(currentLevel) {
+
+    
     currentLevel += 1;    
+    updatePlayerLevel(currentLevel);
     const page = `/level${currentLevel}.html`;
     safeRedirect(page,'index.html');
     
@@ -101,7 +114,7 @@ function isWin () {
                     currGlass.classList.add('disable');
                     winItemLimit--;
                     winGlassId.push(currGlass.id);
-                    console.log('done'+currGlass.id);
+                    //console.log('done'+currGlass.id);
                     return winItemLimit;
                 }                
             }
@@ -115,7 +128,7 @@ function isWin () {
                     currGlass.classList.add('disable');
                     winItemLimit--;
                     winGlassId.push(currGlass.id);
-                    console.log('done'+currGlass.id);
+                    //console.log('done'+currGlass.id);
                     return winItemLimit;
                 }     
             }
@@ -188,6 +201,7 @@ soundBtn.addEventListener('click',()=>{
     // console.log('lol');    
     if(!isPlaying) {
         soundBtn.style.backgroundImage=("url('/images/speaker.png')")
+        bgAudio.volume = 0.6;
         bgAudio.play();
         isPlaying = true;
         bgAudio.loop = true;

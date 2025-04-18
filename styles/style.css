@@ -3,12 +3,13 @@
     padding: 0;
 }
 h1{
-    color: black;
+    color: rgb(255, 255, 255);
 }
 body {
     text-align: center;
     background-color: rgba(124, 124, 195, 0.892);
     color: white;
+    font-family: 'Segoe UI', sans-serif;
     
 }
 .exit-icon {
@@ -119,10 +120,13 @@ body {
 }
 .level {
     font-weight: bold;
-    
-    font-size: 2em;
-    color: rgb(135, 16, 214);
-    
+    background-color: rgba(30, 31, 33, 0.104);
+    font-size: 1.5em;
+    color: rgb(241, 241, 241);
+    box-shadow: 5px 5px 15px -5px rgb(17, 17, 17);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    margin-top: -0.5rem;
 }
 .restart-btn{
     border: none;

@@ -1,34 +1,97 @@
 body {
-    text-align: center;
-    background-color: rgba(124, 124, 195, 0.892);
-    color: white;
-    
-}
-
-.start-btn {
-    margin-top: 10rem;
-    border: none;
-    padding: 2rem;
-    font-size: large;
-    font-family: cursive;
-    background-color: rgba(127, 255, 212, 0.459);
-    box-shadow: 5px 5px 10px -2px rgb(6, 6, 6);
-}
-.start-btn:active{
-    opacity: 70%;
-}
-
-.first-heading {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    /* background: linear-gradient(135deg, #fdfbfb, #ebedee); */
+    background: linear-gradient(135deg, #ffffff, #5e6265);
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
     justify-content: center;
+}
+
+.profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #888;
+    object-fit: cover;
+}
+
+.player-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.levels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.level {
+    background-color: #aa74cc;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    font-weight: bold;
+    color: #333;
+    transition: transform 0.2s ease;
+}
+
+.level:hover {
+    transform: scale(1.05);
+}
+
+.disable {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+@media (max-width: 500px) {
+    .profile img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .player-name {
+        font-size: 1.2rem;
+    }
+
+    .level {
+        font-size: 0.9rem;
+    }
+}
+
+.extra-btn {
+    padding: 0.8rem 0.9rem;
+    border: none;
+    border-radius: 1rem;
+    font-weight: bold;
+    background-color: rgb(130, 238, 180);
+    box-shadow: 2px 2px 20px -5px black;
+    cursor: pointer;
+    margin-right: 1rem;
+
     
 }
-.exit-icon {
-    height: 2rem;
-    width: 2rem;
-    margin: 1rem;
-    margin-bottom: -3.5rem;
-    background-image: url('/images/cross.png');
-    background-size:cover;
-    background-repeat: no-repeat;   
+.extra-btn:active{
+    opacity: 60%;
+}
+
+.disable {
+    pointer-events: none;
+    opacity: 0.6;
 }

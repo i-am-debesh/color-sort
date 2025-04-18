@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
-
-    <title>Color Sort</title>
-    <!-- <link rel="stylesheet" href="/styles/style.css"> -->
-    <link rel="stylesheet" href="/styles/firstStyle.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color Sort Game</title>
+  <link rel="stylesheet" href="/styles/formStyle.css">
+  <link rel="stylesheet" href="/styles/firstStyle.css">
 </head>
 <body>
-    
-    <div class="first-heading">        
-        
-        <h1>Color Sort</h1>
-    </div>
-    
-    <div class="profile">
-        <div class="avatar"></div>
-    </div>
-    
-    <button class="start-btn">Start Game</button>
-    <script src="/scripts/firstScript.js"></script>
 
+  <!-- Avatar + Player Name -->
+  <div class="profile">
+    <img id="avatar-img" src="" alt="Avatar" />
+    <div class="player-name">Player Name</div>
+    <div class="extras">
+        <button class="edit-btn extra-btn">Edit Details</button>
+        <button class="erase-btn extra-btn">Erase Data</button>
+
+    </div>
+  </div>
+
+  <!-- Levels -->
+  <div class="levels">
+    <a href="level1.html" class="level">Level 1</a>
+    <a href="level2.html" class="level">Level 2</a>
+    <a href="level3.html" class="level">Level 3</a>
+    <a href="level4.html" class="level">Level 4</a>
+    <a href="level5.html" class="level">Level 5</a>
+    <a href="level6.html" class="level">Level 6</a>
+    <a href="level7.html" class="level">Level 7</a>
+    <a href="level8.html" class="level">Level 8</a>
+    
+  </div>
+    <script src="/scripts/takeData.js"></script>
+    <script src="/scripts/firstScript.js"></script>
 </body>
 </html>

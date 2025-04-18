@@ -1,0 +1,12 @@
+.start-btn {
+    margin-top: 10rem;
+    border: none;
+    padding: 2rem;
+    font-size: large;
+    font-family: cursive;
+    background-color: rgba(127, 255, 212, 0.459);
+    box-shadow: 5px 5px 10px -2px rgb(6, 6, 6);
+}
+.start-btn:active{
+    opacity: 70%;
+}

@@ -11,6 +11,21 @@ body {
     color: white;
     
 }
+.heading {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+}
+.sound-btn {
+    border: none;
+    padding: 1rem;
+    margin-top: 0;
+    background-color: rgba(240, 248, 255, 0);
+    background-image: url('/images/speaker.png');
+    background-size: cover;
+    filter: invert(100%);
+}
 .game-space {
     margin-top: 5rem;
     display: flex;
@@ -18,7 +33,8 @@ body {
     flex-wrap: wrap;
 }
 .glass {
-    min-height: 12rem;
+    height: 12rem;
+    /* height: 238px; */
     /* max-height: fit-content; */
     width: 2.9rem;
     background-color: rgba(1, 1, 1, 0.17);
@@ -42,9 +58,12 @@ body {
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 }
-/* .glass-four-color{
-    
-} */
+.glass-three-color {
+    height: 11rem;
+}
+.glass-four-color{
+    height: 15rem;
+}
 .color {
     /* background-color: blueviolet; */
     height: 3rem;
@@ -91,18 +110,25 @@ body {
 }
 .level {
     font-weight: bold;
-    margin-top: 2rem;
+    
     font-size: 2em;
     color: rgb(135, 16, 214);
     
 }
 .restart-btn{
     border: none;
-    padding: 0.6rem;
-    background-color: aquamarine;
-    border-radius: 2px;
-    box-shadow: 2px 2px 5px rgb(23, 28, 27);
+    padding: 1rem;
+    background-color: rgba(124, 124, 195, 0);
+    border-radius: 2px;    
     font-weight: bold;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    width: 2rem;    
+    background-image: url('/images/restart.png');
+    filter: invert(100%);
+    background-size: cover;
+    background-size: 2rem;
+    background-repeat: no-repeat;
 }
 .restart-btn:active {
     opacity: 60%;

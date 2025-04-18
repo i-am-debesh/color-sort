@@ -6,8 +6,16 @@ const gameSpaceElement = document.getElementById('game-space');
 const levelElement = document.querySelector('.level');
 const restartBtn = document.getElementById('restart-btn');
 
+
+
 restartBtn.addEventListener('click', ()=>{
     location.reload(); 
+});
+document.querySelectorAll('.glass').forEach((g)=>{
+    g.classList.add('focused')
+})
+document.querySelectorAll('.glass').forEach((g)=>{
+    g.classList.add('focused')
 });
 let focusedGlassAndColor = ''
 
@@ -18,6 +26,20 @@ let colorCount = 3;
 
 let currentLevel = extractNumber(levelElement.innerText);
 currentLevel >= 6?colorCount=4:colorCount=3;
+
+
+if(colorCount >=3 ) {
+    if(colorCount === 3) {
+        glasses.forEach(glass=>{
+            glass.classList.add('glass-three-color');
+        })
+    }else if(colorCount === 4) {
+        glasses.forEach(glass=>{
+            glass.classList.add('glass-four-color');
+        })
+    }
+}
+
 let winItemLimit = colorCount; //no. of win can be possible
 function extractNumber(str) {
     const match = str.match(/\d+/); // match the first sequence of digits
@@ -151,6 +173,33 @@ glasses.forEach((glass)=>{
 
 
 });
+
+
+///sound 
+let isPlaying = false;
+let firstTime = true;
+let bgAudio = new Audio('/musics/bg.mp3');
+const soundBtn = document.getElementById('sound-btn');
+soundBtn.style.backgroundImage=("url('/images/mute.png')");
+soundBtn.addEventListener('click',()=>{
+    // console.log('lol');    
+    if(!isPlaying) {
+        soundBtn.style.backgroundImage=("url('/images/speaker.png')")
+        bgAudio.play();
+        isPlaying = true;
+        bgAudio.loop = true;
+    }
+    else if(isPlaying){
+        soundBtn.style.backgroundImage=("url('/images/mute.png')")
+        bgAudio.pause();
+        isPlaying = false;
+    }
+        
+
+});
+
+
+///
 
 
 

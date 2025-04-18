@@ -6,11 +6,17 @@
     <title>Color Sort</title>
     <link rel="icon" type="image/png" href="/images/favicon.png">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
     <h1>Color Sort</h1>
-    <div class="level">Level-5</div>
+    <div class="heading">
+        <div class="level">Level-5</div>
+        <div class="btns">
+            <button id="restart-btn" class="restart-btn"></button>
+            <button id="sound-btn" class="sound-btn"></button>
+        </div>
+    </div>
     <div class="game-space" id="game-space">
         
         <div class="glass g1" id="g1">
@@ -34,24 +40,8 @@
         
         <div class="glass g4" id="g4"></div>
     </div>
-    <div class="btns">
-        <button id="restart-btn" class="restart-btn">Restart</button>
-    </div>
-
-    <script>
-        
-        let bgAudio = new Audio('/musics/bg.mp3');
-        
-        document.body.addEventListener('click',()=>{
-            bgAudio.play()
-        });
-        document.querySelectorAll('.glass').forEach((g)=>{
-            g.classList.add('focused')
-        })
-    </script>
     
-    <script src="script.js"></script>
-    <!-- <script src="levels.js"></script> -->
+    <script src="/scripts/script.js"></script>
 
 </body>
 </html>

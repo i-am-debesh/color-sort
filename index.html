@@ -6,52 +6,17 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
 
     <title>Color Sort</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/firstStyle.css">
 </head>
 <body>
     <h1>Color Sort</h1>
-    <div class="level">Level-1</div>
-    <div class="game-space" id="game-space">
-        
-        <div class="glass g1" id="g1">
-            <div class="color c1" id="c1"></div>
-            <div class="color c2" id="c2"></div>                       
-            <div class="color c3" id="c3"></div>
-        </div>
-        <div class="glass g2" id="g2">
-            <div class="color c1" id="c1"></div>            
-            <div class="color c3" id="c3"></div>
-            <div class="color c2" id="c2"></div>
-        </div>
-        
-        
-        <div class="glass g3" id="g3">
-            
-            <div class="color c3" id="c3"></div>
-            <div class="color c2" id="c2"></div>            
-            <div class="color c1" id="c1"></div>
-        </div>
-        
-        <div class="glass g4" id="g4"></div>
-    </div>
-
-    <div class="btns">
-        <button id="restart-btn" class="restart-btn">Restart</button>
+    <div class="profile">
+        <div class="avatar"></div>
     </div>
     
-    <script>
-        
-        let bgAudio = new Audio('/musics/bg.mp3');
-        
-        document.body.addEventListener('click',()=>{
-            bgAudio.play()
-        });
-        document.querySelectorAll('.glass').forEach((g)=>{
-            g.classList.add('focused')
-        })
-    </script>
-    <script src="script.js"></script>
-    <!-- <script src="levels.js"></script> -->
+    <button class="start-btn">Start Game</button>
+    <script src="/scripts/firstScript.js"></script>
 
 </body>
 </html>

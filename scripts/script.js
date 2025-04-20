@@ -7,6 +7,15 @@ const levelElement = document.querySelector('.level');
 const restartBtn = document.getElementById('restart-btn');
 const exitElement = document.querySelector('.exit-icon');
 
+function isPlayerAvailable() {
+    const playerData = localStorage.getItem("player");
+    return playerData !== null;
+}
+if(!isPlayerAvailable()) {
+    alert('no player found!');
+    safeRedirect('index.html','index.html');
+}  
+
 exitElement.addEventListener('click', ()=>{
     safeRedirect('index.html','#');
 })

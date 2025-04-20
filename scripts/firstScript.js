@@ -92,9 +92,12 @@ editBtn.addEventListener('click', ()=>{
     const playerdata = JSON.parse(localStorage.getItem("player"));
 
     if(playerdata) {
-        playerdata.name = newName;
-        localStorage.setItem("player", JSON.stringify(playerdata));
-        location.reload();
+        if(newName) {
+            playerdata.name = newName;
+            localStorage.setItem("player", JSON.stringify(playerdata));
+            location.reload();
+        }
+        
     }else {
         alert('no player found!');
     }
